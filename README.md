@@ -18,6 +18,21 @@ themselves live in their own repositories; this repo is only the catalogue.
 |---|---|
 | [presentation-coach](https://github.com/robbiegal/presentation-coach) | Audits a rehearsal recording against its slide deck — timing, pace, fillers, figures the speaker got wrong, slides never mentioned, and vocal delivery — and tracks progress across dry runs. |
 
+## Why the source is an explicit https URL
+
+A `github` shorthand source (`{"source": "github", "repo": "owner/name"}`)
+clones over **SSH by default**. On a machine with no SSH key — which is most
+machines, including ones where `gh` is authenticated and every other git
+operation works — the marketplace adds cleanly and then the plugin install
+fails with `Permission denied (publickey)`. That is a confusing failure,
+because the marketplace step succeeded moments earlier by falling back to
+HTTPS on its own.
+
+The user-side fix is `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1`, but requiring an
+environment variable to install is not a reasonable ask. An explicit `url`
+source clones over HTTPS for everyone, and picks up `gh`'s credential helper
+for private repositories.
+
 ## Notes for me, later
 
 - Adding a plugin: append an entry to `.claude-plugin/marketplace.json`. Users

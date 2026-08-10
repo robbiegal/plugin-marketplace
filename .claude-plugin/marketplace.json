@@ -11,12 +11,18 @@
       "name": "presentation-coach",
       "displayName": "Presentation Coach",
       "source": {
-        "source": "github",
-        "repo": "robbiegal/presentation-coach"
+        "source": "url",
+        "url": "https://github.com/robbiegal/presentation-coach.git"
       },
       "description": "Audit a rehearsal recording against its slide deck: timing, pace, fillers, slide/speech consistency and vocal delivery, tracked across dry runs.",
       "category": "productivity",
-      "keywords": ["presentation", "rehearsal", "public-speaking", "whisper", "prosody"],
+      "keywords": [
+        "presentation",
+        "rehearsal",
+        "public-speaking",
+        "whisper",
+        "prosody"
+      ],
       "license": "MIT",
       "homepage": "https://github.com/robbiegal/presentation-coach#readme"
     }
