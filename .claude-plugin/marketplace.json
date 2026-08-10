@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "robbiegal-tools",
+  "owner": {
+    "name": "Robbie Galfrin",
+    "url": "https://github.com/robbiegal"
+  },
+  "description": "Tools for rehearsing, auditing and improving conference talks.",
+  "plugins": [
+    {
+      "name": "presentation-coach",
+      "displayName": "Presentation Coach",
+      "source": {
+        "source": "github",
+        "repo": "robbiegal/presentation-coach"
+      },
+      "description": "Audit a rehearsal recording against its slide deck: timing, pace, fillers, slide/speech consistency and vocal delivery, tracked across dry runs.",
+      "category": "productivity",
+      "keywords": ["presentation", "rehearsal", "public-speaking", "whisper", "prosody"],
+      "license": "MIT",
+      "homepage": "https://github.com/robbiegal/presentation-coach#readme"
+    }
+  ]
+}
