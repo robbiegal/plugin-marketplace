@@ -1,0 +1,39 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The manifest is the entire product here, so a schema slip ships as a
+      # marketplace nobody can add. --strict because there is no reason to
+      # tolerate a warning in a file this small.
+      - name: Validate marketplace manifest
+        run: npx -y @anthropic-ai/claude-code@latest plugin validate . --strict
+
+      # A source that points nowhere validates fine and fails at install time,
+      # in the user's terminal rather than in CI.
+      - name: Every github source resolves to a real repository
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'PY' > repos.txt
+          import json
+          m = json.load(open(".claude-plugin/marketplace.json"))
+          for p in m["plugins"]:
+              s = p["source"]
+              if isinstance(s, dict) and s.get("source") == "github":
+                  print(s["repo"])
+          PY
+          while read -r repo; do
+            [ -n "$repo" ] || continue
+            echo "checking $repo"
+            gh repo view "$repo" --json name >/dev/null
+          done < repos.txt
