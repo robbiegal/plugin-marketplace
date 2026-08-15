@@ -4,9 +4,13 @@ A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-market
 
 ```
 /plugin marketplace add robbiegal/plugin-marketplace
-/plugin install presentation-coach@robbiegal-tools
-/presentation-coach:coach-doctor
+/plugin install cutlist@robbiegal-tools
+/cutlist:cutlist-doctor
 ```
+
+Each plugin ships a doctor. Run it first — both of these call external binaries
+they cannot install for you, and the doctor is what tells you which one is
+missing instead of a render failing halfway.
 
 The marketplace is named `robbiegal-tools`, not after this repository — that is
 the name you install against, and it is registered once per user. The plugins
@@ -16,6 +20,7 @@ themselves live in their own repositories; this repo is only the catalogue.
 
 | Plugin | What it does |
 |---|---|
+| [cutlist](https://github.com/robbiegal/cutlist) | Cuts, grades, annotates, redacts and mixes a finished video from raw footage using ffmpeg, then proves the delivered file frame by frame — because an encoder exits 0 on a render that is entirely black. |
 | [presentation-coach](https://github.com/robbiegal/presentation-coach) | Audits a rehearsal recording against its slide deck — timing, pace, fillers, figures the speaker got wrong, slides never mentioned, and vocal delivery — and tracks progress across dry runs. |
 
 ## Why the source is an explicit https URL

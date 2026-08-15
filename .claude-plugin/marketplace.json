@@ -5,8 +5,27 @@
     "name": "Robbie Galfrin",
     "url": "https://github.com/robbiegal"
   },
-  "description": "Tools for rehearsing, auditing and improving conference talks.",
+  "description": "Tools for preparing and producing technical talks and the material that goes with them.",
   "plugins": [
+    {
+      "name": "cutlist",
+      "displayName": "Cutlist",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/robbiegal/cutlist.git"
+      },
+      "description": "Cut, grade, annotate, redact and mix a finished video from raw footage with ffmpeg, and prove the result frame by frame instead of trusting the exit code.",
+      "category": "productivity",
+      "keywords": [
+        "video",
+        "video-editing",
+        "ffmpeg",
+        "redaction",
+        "post-production"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/robbiegal/cutlist#readme"
+    },
     {
       "name": "presentation-coach",
       "displayName": "Presentation Coach",
