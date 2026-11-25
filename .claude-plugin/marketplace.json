@@ -5,7 +5,7 @@
     "name": "Robbie Galfrin",
     "url": "https://github.com/robbiegal"
   },
-  "description": "Tools for preparing and producing technical talks and the material that goes with them.",
+  "description": "Robbie Galfrin's public Claude Code plugins.",
   "plugins": [
     {
       "name": "cutlist",

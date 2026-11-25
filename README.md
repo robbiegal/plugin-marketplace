@@ -8,9 +8,10 @@ A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-market
 /cutlist:cutlist-doctor
 ```
 
-Each plugin ships a doctor. Run it first — both of these call external binaries
-they cannot install for you, and the doctor is what tells you which one is
-missing instead of a render failing halfway.
+Each plugin ships a doctor. Run it first — they all depend on things they
+cannot install for you (external binaries, and in tamlul's case multi-GB
+models), and the doctor is what tells you which one is missing instead of a
+render or a transcription failing halfway.
 
 The marketplace is named `robbiegal-tools`, not after this repository — that is
 the name you install against, and it is registered once per user. The plugins
@@ -22,6 +23,7 @@ themselves live in their own repositories; this repo is only the catalogue.
 |---|---|
 | [cutlist](https://github.com/robbiegal/cutlist) | Cuts, grades, annotates, redacts and mixes a finished video from raw footage using ffmpeg, then proves the delivered file frame by frame — because an encoder exits 0 on a render that is entirely black. |
 | [presentation-coach](https://github.com/robbiegal/presentation-coach) | Audits a rehearsal recording against its slide deck — timing, pace, fillers, figures the speaker got wrong, slides never mentioned, and vocal delivery — and tracks progress across dry runs. |
+| [tamlul](https://github.com/robbiegal/tamlul) | Transcribes and annotates Hebrew conversations on the machine they were recorded on — speaker-attributed, timestamped and verbatim, with turns, overlaps, action items and summaries. No audio leaves the machine. |
 
 ## Why the source is an explicit https URL
 
