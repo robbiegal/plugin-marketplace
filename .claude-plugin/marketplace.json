@@ -44,6 +44,25 @@
       ],
       "license": "MIT",
       "homepage": "https://github.com/robbiegal/presentation-coach#readme"
+    },
+    {
+      "name": "tamlul",
+      "displayName": "Tamlul",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/robbiegal/tamlul.git"
+      },
+      "description": "Transcribe and annotate Hebrew conversations locally: ivrit.ai Whisper + pyannote on CPU, speaker-attributed, timestamped and verbatim, with turns, overlaps, action items and summaries. Audio never leaves the machine.",
+      "category": "productivity",
+      "keywords": [
+        "hebrew",
+        "transcription",
+        "diarization",
+        "whisper",
+        "ivrit"
+      ],
+      "license": "MIT; see THIRD_PARTY_NOTICES.md",
+      "homepage": "https://github.com/robbiegal/tamlul#readme"
     }
   ]
 }
